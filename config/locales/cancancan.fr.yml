@@ -1,0 +1,5 @@
+---
+fr:
+  unauthorized:
+    manage:
+      all: "Vous n'êtes pas autorisé à accéder à %{subject}."

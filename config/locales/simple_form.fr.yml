@@ -1,0 +1,10 @@
+---
+fr:
+  simple_form:
+    error_notification:
+      default_message: 'Merci de revoir le(s) problème(s) suivant(s):'
+    'no': Non
+    required:
+      mark: "*"
+      text: Champs requis
+    'yes': Oui

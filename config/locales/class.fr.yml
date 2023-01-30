@@ -1,0 +1,10 @@
+---
+fr:
+  activerecord:
+    attributes:
+      dish:
+        name: Nom
+        price: Prix
+        type: Catégorie
+    models:
+      dish: Plat

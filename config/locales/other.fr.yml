@@ -1,0 +1,23 @@
+---
+fr:
+  helpers:
+    actions: Actions
+    new: Nouveau %{class}
+    confirm: "Êtes-vous sûr?"
+    choose: "Choisir un élément dans la liste"
+    titles:
+      edit: "Edition de ce(tte) %{model}"
+      list: "Liste des %{model}"
+      new: "Ajout de ce(tte) %{model}"
+      management: Gestion
+      admin: Administration
+      calendarSharedCapacities: Capacités partagées > Calendrier
+      calendarOperationalSchedules: Opérations planifiées > Calendrier
+      calendarSchoolSecurity: Écoles > Calendrier
+      calendarMarket: Calendrier des marchés
+  update_cont: "Mise à jour de cet enregistrement"
+  create_cont: "Ajout de cet enregistrement"
+  destroy_cont: "Suppression de cet enregistrement"
+  printed_cont: "Impression réussie"
+  import: Importation
+  people: membres du personnel

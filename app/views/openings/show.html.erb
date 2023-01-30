@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @opening %>
+
+<div>
+  <%= link_to "Edit this opening", edit_opening_path(@opening) %> |
+  <%= link_to "Back to openings", openings_path %>
+
+  <%= button_to "Destroy this opening", @opening, method: :delete %>
+</div>

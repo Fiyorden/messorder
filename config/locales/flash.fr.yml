@@ -1,0 +1,7 @@
+---
+fr:
+  update_cont: "Mise à jour réussie"
+  create_cont: "Création réussie"
+  destroy_cont: "Destruction réussie"
+  acces_denied: "Vous n'avez pas accès à cette fonction"
+  import_cont: "Importation terminée"

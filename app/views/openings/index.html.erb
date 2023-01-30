@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Openings</h1>
+
+<div id="openings">
+  <% @openings.each do |opening| %>
+    <%= render opening %>
+    <p>
+      <%= link_to "Show this opening", opening %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New opening", new_opening_path %>

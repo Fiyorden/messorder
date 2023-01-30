@@ -1,0 +1,27 @@
+<%= form_with(model: opening) do |form| %>
+  <% if opening.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(opening.errors.count, "error") %> prohibited this opening from being saved:</h2>
+
+      <ul>
+        <% opening.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :from_at, style: "display: block" %>
+    <%= form.datetime_field :from_at %>
+  </div>
+
+  <div>
+    <%= form.label :to_at, style: "display: block" %>
+    <%= form.datetime_field :to_at %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
