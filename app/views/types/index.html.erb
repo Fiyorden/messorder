@@ -1,14 +1,21 @@
-<p style="color: green"><%= notice %></p>
+<h1><%= t("helpers.titles.list", model: Type.model_name.human.pluralize.mb_chars) %></h1>
 
-<h1>Types</h1>
+<%= link_to icon('fa-solid','plus'), new_type_path, class: 'btn btn-secondary btn-xs' %>
 
-<div id="types">
+<div id="dishes" class="row row-cols-1 row-cols-md-6 g-4">
   <% @types.each do |type| %>
-    <%= render type %>
-    <p>
-      <%= link_to "Show this type", type %>
-    </p>
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+          <%= render type %>
+        </div>
+        <div class="card-footer">
+          <div class="btn-group">
+            <%= link_to icon('fa-solid','eye'), type, class: "btn btn-dark" %>
+            <%= link_to icon('fa-solid', 'pencil'), edit_type_path(type), class: "btn btn-info" %>
+          </div>
+        </div>
+      </div>
+    </div>
   <% end %>
 </div>
-
-<%= link_to "New type", new_type_path %>

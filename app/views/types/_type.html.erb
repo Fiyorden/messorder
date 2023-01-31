@@ -1,7 +1,23 @@
 <div id="<%= dom_id type %>">
   <p>
-    <strong>Name:</strong>
+    <strong><%= Type.human_attribute_name(:name) %>:</strong>
     <%= type.name %>
   </p>
-
+  <% if controller.controller_name == 'types' %>
+  <p>
+    <strong><%= Type.human_attribute_name(:enabled) %>:</strong>
+    <%= logo_boolean(type.enabled) %>
+  </p>
+  <% end %>
+  <ul>
+    <% type.dishes.each do |dish| %>
+      <li>
+        <% if current_user %>
+          <%= link_to dish.name + ' ' +number_to_currency(dish.price) , new_order_path(dish.id) %>
+        <% else %>
+          <%= dish.name %> <%= number_to_currency(dish.price) %>
+        <% end %>        
+      </li>
+    <% end %>
+  </ul>
 </div>

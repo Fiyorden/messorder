@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_21_200934) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_31_144001) do
   create_table "action_text_rich_texts", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
     t.text "body", size: :long
@@ -87,6 +87,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_21_200934) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "enabled"
   end
 
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -116,6 +117,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_21_200934) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "dishes", "types"
+  add_foreign_key "dishes_orders", "dishes", name: "dishes_orders_dish_id_fk"
+  add_foreign_key "dishes_orders", "orders", name: "dishes_orders_order_id_fk"
   add_foreign_key "orders", "openings"
   add_foreign_key "orders", "users"
   add_foreign_key "wallets", "users"

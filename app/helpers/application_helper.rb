@@ -15,11 +15,11 @@ module ApplicationHelper
   def logo_boolean(boolean)
     if boolean
       tag.span class: 'badge rounded-pill bg-success' do
-        fa_icon('check')
+        icon('fa-solid','check')
       end
     else
       tag.span class: 'badge rounded-pill bg-danger' do
-        fa_icon('times')
+        icon('fa-solid','times')
       end
     end
   end

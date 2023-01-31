@@ -82,3 +82,5 @@ gem "solargraph-rails", "~> 1.1", :group => :development
 gem "simple_form", "~> 5.2"
 
 gem "jbuilder", "~> 2.11"
+
+gem "immigrant", "~> 0.3.6"

@@ -1,10 +1,7 @@
-<p style="color: green"><%= notice %></p>
+<div class="btn-group">
+  <%= link_to icon('fa-solid','pencil'), edit_type_path(@type), class: "btn btn-info" %>
+  <%= link_to icon('fa-solid','list'), types_path, class: "btn btn-secondary" %>
+  <%= button_to icon('fa-solid','times'), @type, method: :delete, class: "btn btn-danger" %>
+</div>
 
 <%= render @type %>
-
-<div>
-  <%= link_to "Edit this type", edit_type_path(@type) %> |
-  <%= link_to "Back to types", types_path %>
-
-  <%= button_to "Destroy this type", @type, method: :delete %>
-</div>

@@ -1,2 +1,17 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<h1>Menu</h1>
+<div id="dishes" class="row row-cols-1 row-cols-md-4 g-4">
+  <% @types.each do |type| %>
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+          <%= render type %>
+        </div>
+        <div class="card-footer">
+          <div class="btn-group">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

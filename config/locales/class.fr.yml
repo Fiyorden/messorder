@@ -7,9 +7,14 @@ fr:
         price: Prix
         type: Catégorie
         picture: Image
+        enabled: Actif
       opening: 
         from_at: De
         to_at: Á
+      type:
+        name: Nom
+        enabled: Actif
     models:
       dish: plat
       opening: Ouverture
+      type: Catégorie

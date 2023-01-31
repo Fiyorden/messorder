@@ -13,6 +13,11 @@
     <strong><%= Dish.human_attribute_name(:type) %>:</strong>
     <%= dish.type.name %>
   </p>
+
+  <p>
+    <strong><%= Dish.human_attribute_name(:enabled) %>:</strong>
+    <%= logo_boolean(dish.enabled) %>
+  </p>
   <% if dish.picture.attached? %>
     <%= image_tag dish.picture, class: "img-fluid" %>
   <% else %>

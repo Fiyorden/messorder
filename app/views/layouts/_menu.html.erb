@@ -14,8 +14,8 @@
           <ul class="dropdown-menu">
             <li><%= link_to Dish.model_name.human.pluralize.mb_chars.titleize, dishes_path, class: "dropdown-item #{active_class(dishes_path)}" %></li>
             <li><%= link_to Opening.model_name.human.pluralize.mb_chars.titleize, openings_path, class: "dropdown-item #{active_class(openings_path)}" %></li>
-            <li><%= link_to Order.model_name.human.pluralize.mb_chars.titleize, orders_path, class: "dropdown-item #{active_class(orders_path)}" %></li>
             <li><%= link_to Type.model_name.human.pluralize.mb_chars.titleize, types_path, class: "dropdown-item #{active_class(types_path)}" %></li>
+            <li><%= link_to Order.model_name.human.pluralize.mb_chars.titleize, orders_path, class: "dropdown-item #{active_class(orders_path)}" %></li>
             <li><%= link_to Wallet.model_name.human.pluralize.mb_chars.titleize, wallets_path, class: "dropdown-item #{active_class(wallets_path)}" %></li>
           </ul>
         </li> 
