@@ -1,12 +1,11 @@
 <div id="<%= dom_id opening %>">
   <p>
-    <strong>From at:</strong>
-    <%= opening.from_at %>
+    <strong><%= Opening.human_attribute_name(:from_at) %>:</strong>
+    <%= getDatetime(opening.from_at) %>
   </p>
 
   <p>
-    <strong>To at:</strong>
-    <%= opening.to_at %>
+    <strong><%= Opening.human_attribute_name(:to_at) %>:</strong>
+    <%= getDatetime(opening.to_at) %>
   </p>
-
 </div>

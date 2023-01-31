@@ -1,9 +1,9 @@
-<h1>New opening</h1>
+<h1><%= t("helpers.titles.new", model: Opening.model_name.human.mb_chars) %></h1>
 
 <%= render "form", opening: @opening %>
 
 <br>
 
-<div>
-  <%= link_to "Back to openings", openings_path %>
+<div class="btn-group">
+  <%= link_to icon('fa-solid','list'), openings_path, class: "btn btn-secondary" %>
 </div>

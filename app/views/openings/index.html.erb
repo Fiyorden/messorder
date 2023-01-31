@@ -1,14 +1,8 @@
-<p style="color: green"><%= notice %></p>
+<h1><%= t("helpers.titles.list", model: Opening.model_name.human.pluralize.mb_chars) %></h1>
 
-<h1>Openings</h1>
+<%= link_to icon('fa-solid','plus'), new_opening_path, class: 'btn btn-secondary btn-xs' %>
 
-<div id="openings">
-  <% @openings.each do |opening| %>
-    <%= render opening %>
-    <p>
-      <%= link_to "Show this opening", opening %>
-    </p>
-  <% end %>
-</div>
-
-<%= link_to "New opening", new_opening_path %>
+<%= content_tag :div, data: { controller: 'calendar' } do %>
+    <%= content_tag :div, 'data-calendar-target': 'calendar' do %>
+    <% end %>
+<% end %>

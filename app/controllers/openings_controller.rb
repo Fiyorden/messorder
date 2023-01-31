@@ -6,6 +6,13 @@ class OpeningsController < ApplicationController
     @openings = Opening.all
   end
 
+  def calendar
+    respond_to do |format|
+      format.html
+      format.json { @openings = Opening.all }
+    end
+  end
+  
   # GET /openings/1
   def show
   end

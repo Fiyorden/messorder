@@ -32,6 +32,24 @@ module ApplicationHelper
     end
   end
 
+  def to_time(time)
+    handle_none time do
+      time.strftime('%H:%M')
+    end
+  end
+
+  def getDate(date)
+    handle_none date do
+      date.strftime('%d/%m/%Y')
+    end
+  end
+
+  def getDatetime(date)
+    handle_none date do
+      date.strftime('%d/%m/%Y %H:%M')
+    end
+  end
+
   def fa_icon(names = "flag", original_options = {})
     options = original_options.deep_dup
     classes = ["fa"]

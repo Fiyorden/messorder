@@ -3,7 +3,11 @@ Rails.application.routes.draw do
   resources :dishes
   resources :types
   resources :wallets
-  resources :openings
+  resources :openings do
+    collection do
+      get 'calendar', to: 'openings#calendar'
+    end
+  end
   devise_for :users
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

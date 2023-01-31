@@ -80,3 +80,5 @@ gem "solargraph", "~> 0.48.0", :group => :development
 gem "solargraph-rails", "~> 1.1", :group => :development
 
 gem "simple_form", "~> 5.2"
+
+gem "jbuilder", "~> 2.11"

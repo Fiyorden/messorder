@@ -1,10 +1,7 @@
-<p style="color: green"><%= notice %></p>
+<div class="btn-group">
+  <%= link_to icon('fa-solid','pencil'), edit_opening_path(@opening), class: "btn btn-info" %>
+  <%= link_to icon('fa-solid','list'), openings_path, class: "btn btn-secondary" %>
+  <%= button_to icon('fa-solid','times'), @opening, method: :delete, class: "btn btn-danger" %>
+</div>
 
 <%= render @opening %>
-
-<div>
-  <%= link_to "Edit this opening", edit_opening_path(@opening) %> |
-  <%= link_to "Back to openings", openings_path %>
-
-  <%= button_to "Destroy this opening", @opening, method: :delete %>
-</div>

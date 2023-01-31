@@ -21,9 +21,9 @@
         </li> 
       </ul>
       <% if not current_user %>
-        <%= link_to icon('fa-solid', 'right-from-bracket') + " se connecter ", new_user_session_path, class: "btn btn-outline-success me-2" %>
+        <%= link_to icon('fa-solid', 'right-to-bracket') + " se connecter ", new_user_session_path, class: "btn btn-outline-success me-2" %>
       <% else %>
-        <%= link_to icon('fa-solid', 'left-from-bracket') + " se déconnecter ", nil, class: "btn btn-outline-danger me-2" %>
+        <%= link_to icon('fa-solid', 'arrow-right-from-bracket') + " se déconnecter ", nil, class: "btn btn-outline-danger me-2" %>
       <% end %>
     </div>
   </div>

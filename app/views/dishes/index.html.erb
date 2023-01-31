@@ -1,14 +1,21 @@
-<p style="color: green"><%= notice %></p>
+<h1><%= t("helpers.titles.list", model: Dish.model_name.human.pluralize.mb_chars) %></h1>
 
-<h1>Dishes</h1>
+<%= link_to icon('fa-solid','plus'), new_dish_path, class: 'btn btn-secondary btn-xs' %>
 
-<div id="dishes">
+<div id="dishes" class="row row-cols-1 row-cols-md-6 g-4">
   <% @dishes.each do |dish| %>
-    <%= render dish %>
-    <p>
-      <%= link_to "Show this dish", dish %>
-    </p>
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+          <%= render dish %>
+        </div>
+        <div class="card-footer">
+          <div class="btn-group">
+            <%= link_to icon('fa-solid','eye'), dish, class: "btn btn-dark" %>
+            <%= link_to icon('fa-solid', 'pencil'), edit_dish_path(dish), class: "btn btn-info" %>
+          </div>
+        </div>
+      </div>
+    </div>
   <% end %>
 </div>
-
-<%= link_to "New dish", new_dish_path %>

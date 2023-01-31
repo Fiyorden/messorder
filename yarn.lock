@@ -117,6 +117,50 @@
   resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-free/-/fontawesome-free-6.2.1.tgz#344baf6ff9eaad7a73cff067d8c56bfc11ae5304"
   integrity sha512-viouXhegu/TjkvYQoiRZK3aax69dGXxgEjpvZW81wIJdxm5Fnvp3VVIP4VHKqX4SvFw6qpmkILkD4RJWAdrt7A==
 
+"@fullcalendar/bootstrap5@^6.1.0":
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/@fullcalendar/bootstrap5/-/bootstrap5-6.1.0.tgz#d89525809140cc269e15bc9754c2734a581620d3"
+  integrity sha512-UxXyQqLO8VR2evI5kZm8Osd+pLmH/bqrkykluadt/dqB4x2K3+kdddLdTUGs1J5b160qV75pGrny7SFpLAGzmg==
+
+"@fullcalendar/core@^6.1.0":
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/@fullcalendar/core/-/core-6.1.0.tgz#f6246473aa2a258a967a332298ad28ac6e7af1f0"
+  integrity sha512-apAaQIf67fzIt2caUZ3E1lBVGEk4zHN8i8ABGRlY4Vo9Hu7Hlen2xtA2lFaUduAIu2mZ/qv25KCLht/Z7+xQeQ==
+  dependencies:
+    preact "^10.0.5"
+
+"@fullcalendar/daygrid@^6.1.0":
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/@fullcalendar/daygrid/-/daygrid-6.1.0.tgz#d0f05c5b4987ca78114b6cea4138335e51ca7597"
+  integrity sha512-uf4yIBO/nsRlm3DOiOmkPVPtbwA8HBr0EGhc/DdEUDDVj/41nVhKsArBEji5KXKz6kn7TlH7Df3w0f9IUxBcGQ==
+
+"@fullcalendar/daygrid@~6.1.1":
+  version "6.1.1"
+  resolved "https://registry.yarnpkg.com/@fullcalendar/daygrid/-/daygrid-6.1.1.tgz#518e8fa70eec590c4df47e788101551c8e42714e"
+  integrity sha512-/yIrN3IZSdob/UvAaPqWzBqyaQf3+DdcGG7xocVpmt2MudFbTpstF+ffPdBAQWqoWoB18Q92s6fn9teva5nDwA==
+
+"@fullcalendar/interaction@^6.1.1":
+  version "6.1.1"
+  resolved "https://registry.yarnpkg.com/@fullcalendar/interaction/-/interaction-6.1.1.tgz#79c2fca08790a0e9b7a265c0c5dc92861c3e82d2"
+  integrity sha512-eJjdBu/ytX4EuV1mAr6mlB9mPhn80uNpuZz0eXjklYbjFNra9VVrEyNpC7kJiqsajGqQxQekbR2mk+SUJA/rzA==
+
+"@fullcalendar/list@^6.1.0":
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/@fullcalendar/list/-/list-6.1.0.tgz#7100d94225d26a20a14cfc7ea12a1a641d0e1712"
+  integrity sha512-0ciWSP7K+9BPUeBVxqE2Gbk/HLQQy3W4VgZN/f0qQdCfUA/t/tDprEQrklnASsY0w5PFzbkCIrhMMQrdx6do+Q==
+
+"@fullcalendar/timegrid@^6.1.1":
+  version "6.1.1"
+  resolved "https://registry.yarnpkg.com/@fullcalendar/timegrid/-/timegrid-6.1.1.tgz#1ad24cd1fd9e8aa4374dd3dbb3e6ba680214651a"
+  integrity sha512-JWjSxjxCBxIhkLsKT1uQmRWUHqfQWjtXJIy25Ur0jPlTHSLne5CBAyW2UWPwdV0nXpUnN5QWXjjTVLpMJB6uNA==
+  dependencies:
+    "@fullcalendar/daygrid" "~6.1.1"
+
+"@hotwired/stimulus@^3.2.1":
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/@hotwired/stimulus/-/stimulus-3.2.1.tgz#e3de23623b0c52c247aba4cd5d530d257008676b"
+  integrity sha512-HGlzDcf9vv/EQrMJ5ZG6VWNs8Z/xMN+1o2OhV1gKiSG6CqZt5MCBB1gRg5ILiN3U0jEAxuDTNPRfBcnZBDmupQ==
+
 "@hotwired/turbo-rails@^7.2.4":
   version "7.2.4"
   resolved "https://registry.yarnpkg.com/@hotwired/turbo-rails/-/turbo-rails-7.2.4.tgz#d155533e79c4ebdac23e8fe12697d821d5c06307"
@@ -275,6 +319,11 @@ is-number@^7.0.0:
   resolved "https://registry.yarnpkg.com/is-number/-/is-number-7.0.0.tgz#7535345b896734d5f80c4d06c50955527a14f12b"
   integrity sha512-41Cifkg6e8TylSpdtTpeLVMqvSBEVzTttHvERD741+pnZ8ANv0004MRL43QKPDlK9cGvNp6NZWZUBlbGXYxxng==
 
+moment@^2.29.4:
+  version "2.29.4"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.29.4.tgz#3dbe052889fe7c1b2ed966fcb3a77328964ef108"
+  integrity sha512-5LC9SOxjSc2HF6vO2CyuTDNivEdoz2IvyJJGj6X8DJ0eFyfszE0QiEd+iXmBvUP3WHxSjFH/vIsA0EN00cgr8w==
+
 normalize-path@^3.0.0, normalize-path@~3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/normalize-path/-/normalize-path-3.0.0.tgz#0dcd69ff23a1c9b11fd0978316644a0388216a65"
@@ -284,6 +333,11 @@ picomatch@^2.0.4, picomatch@^2.2.1:
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/picomatch/-/picomatch-2.3.1.tgz#3ba3833733646d9d3e4995946c1365a67fb07a42"
   integrity sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==
+
+preact@^10.0.5:
+  version "10.11.3"
+  resolved "https://registry.yarnpkg.com/preact/-/preact-10.11.3.tgz#8a7e4ba19d3992c488b0785afcc0f8aa13c78d19"
+  integrity sha512-eY93IVpod/zG3uMF22Unl8h9KkrcKIRs2EGar8hwLZZDU1lkjph303V9HZBwufh2s736U6VXuhD109LYqPoffg==
 
 readdirp@~3.6.0:
   version "3.6.0"

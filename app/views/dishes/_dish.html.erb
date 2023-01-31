@@ -1,17 +1,21 @@
 <div id="<%= dom_id dish %>">
   <p>
-    <strong>Name:</strong>
+    <strong><%= Dish.human_attribute_name(:name) %>:</strong>
     <%= dish.name %>
   </p>
 
   <p>
-    <strong>Price:</strong>
-    <%= dish.price %>
+    <strong><%= Dish.human_attribute_name(:price) %>:</strong>
+    <%= number_to_currency(dish.price) %>
   </p>
 
   <p>
-    <strong>Type:</strong>
-    <%= dish.type_id %>
+    <strong><%= Dish.human_attribute_name(:type) %>:</strong>
+    <%= dish.type.name %>
   </p>
-
+  <% if dish.picture.attached? %>
+    <%= image_tag dish.picture, class: "img-fluid" %>
+  <% else %>
+    <%= handle_none(false) %>
+  <% end %>
 </div>
