@@ -11,7 +11,9 @@ Rails.application.routes.draw do
   devise_for :users
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
+  get 'checkout', to: 'checkouts#show'
+  get 'account', to: 'welcome#account'
   # Defines the root path route ("/")
   root "welcome#index"
+
 end

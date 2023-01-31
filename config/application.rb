@@ -15,11 +15,13 @@ module Messorder
       generate.helper false
       generate.test_framework :test_unit, fixture: false
     end
+    config.action_mailer.default_url_options = { host: "messorder.test" }
 
     config.time_zone = 'Brussels'
     config.i18n.default_locale = :fr
     config.i18n.locale = :fr
     config.i18n.enforce_available_locales = false
+    config.active_job.queue_adapter = :sidekiq
 
     config.before_configuration do
       env_file = File.join(Rails.root, 'config', "local_#{Rails.env}.yml")

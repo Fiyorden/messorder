@@ -9,6 +9,8 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "fontawesome", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+    <%= tag.meta name: "stripe-key", content: Pay::Stripe.public_key %>
+    <script src="https://js.stripe.com/v3/" defer></script>
     <%= favicon_link_tag asset_path('favicon.png') %>
   </head>
 

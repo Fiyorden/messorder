@@ -1,8 +1,5 @@
 <div id="<%= dom_id type %>">
-  <p>
-    <strong><%= Type.human_attribute_name(:name) %>:</strong>
-    <%= type.name %>
-  </p>
+  <h2><%= type.name %></h2>  
   <% if controller.controller_name == 'types' %>
   <p>
     <strong><%= Type.human_attribute_name(:enabled) %>:</strong>
@@ -10,7 +7,12 @@
   </p>
   <% end %>
   <ul>
-    <% type.dishes.each do |dish| %>
+    <% if controller.controller_name == 'types' 
+        dishes = type.dishes    
+      else 
+        dishes = type.dishes.actif
+      end %>
+    <% dishes.each do |dish| %>
       <li>
         <% if current_user %>
           <%= link_to dish.name + ' ' +number_to_currency(dish.price) , new_order_path(dish.id) %>

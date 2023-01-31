@@ -84,3 +84,8 @@ gem "simple_form", "~> 5.2"
 gem "jbuilder", "~> 2.11"
 
 gem "immigrant", "~> 0.3.6"
+
+gem "pay", "~> 6.3"
+gem "stripe", "~> 8.1"
+
+gem "sidekiq", "~> 7.0"
