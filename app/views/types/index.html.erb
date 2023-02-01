@@ -2,9 +2,9 @@
 
 <%= link_to icon('fa-solid','plus'), new_type_path, class: 'btn btn-secondary btn-xs' %>
 
-<div id="dishes" class="row row-cols-1 row-cols-md-6 g-4">
+<div id="dishes" class="row" data-masonry='{"percentPosition": true }'>
   <% @types.each do |type| %>
-    <div class="col">
+    <div class="col-md-3 py-1">
       <div class="card">
         <div class="card-body">
           <%= render type %>

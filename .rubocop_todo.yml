@@ -37,6 +37,7 @@ Rails/BulkChangeTable:
   Exclude:
     - 'db/migrate/20230120125721_add_saml_to_user.rb'
     - 'db/migrate/20230131154920_create_pay_tables.pay.rb'
+    - 'db/migrate/20230201134114_add_chief_admin_to_user.rb'
 
 # Offense count: 1
 # Configuration parameters: Include.

@@ -3,7 +3,7 @@
 # Scaffold d'ouverture
 class OpeningsController < ApplicationController
   before_action :set_opening, only: %i[show edit update destroy]
-
+  before_action :ok?
   # GET /openings
   def index
     @openings = Opening.all
@@ -32,7 +32,7 @@ class OpeningsController < ApplicationController
     @opening = Opening.new(opening_params)
 
     if @opening.save
-      redirect_to @opening, notice: 'Opening was successfully created.'
+      redirect_to @opening, flash: { info: t('create_cont') }
     else
       render :new, status: :unprocessable_entity
     end
@@ -41,7 +41,7 @@ class OpeningsController < ApplicationController
   # PATCH/PUT /openings/1
   def update
     if @opening.update(opening_params)
-      redirect_to @opening, notice: 'Opening was successfully updated.'
+      redirect_to @opening, flash: { info: t('update_cont') }
     else
       render :edit, status: :unprocessable_entity
     end
@@ -50,7 +50,7 @@ class OpeningsController < ApplicationController
   # DELETE /openings/1
   def destroy
     @opening.destroy
-    redirect_to openings_url, notice: 'Opening was successfully destroyed.'
+    redirect_to openings_url, flash: { info: t('destroy_cont') }
   end
 
   private
@@ -63,5 +63,11 @@ class OpeningsController < ApplicationController
   # Only allow a list of trusted parameters through.
   def opening_params
     params.require(:opening).permit(:from_at, :to_at)
+  end
+
+  def ok?
+    unless (current_user.admin? || current_user.chief?)
+      redirect_to root_url, flash: { error: t('acces_denied') }
+    end
   end
 end

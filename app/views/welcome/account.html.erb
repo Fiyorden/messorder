@@ -20,7 +20,31 @@
         </tbody>
     </table>
 </div>
-
+<h2>Commande</h2>
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th><%= Order.human_attribute_name(:opening) %></th>
+                    <th><%= Order.human_attribute_name(:user) %></th>
+                    <th><%= Order.human_attribute_name(:paid) %></th>
+                    <th><%= Order.human_attribute_name(:dishes) %></th>
+                    <th><%=t("helpers.actions") %></th>
+                </tr>
+            </thead>
+            <tbody id="orders">
+                <% @orders.each do |order| %>
+                    <tr>
+                        <%= render order %>
+                    <td>
+                        <%= link_to icon('fa-solid','eye'), order, class: "btn btn-dark" %>
+                        <%= link_to icon('fa-solid', 'pencil'), edit_order_path(order), class: "btn btn-info" %>
+                    </td>
+                    </tr>
+                <% end %>
+            </tbody>
+        </table>
+    </div>
 <h2>Portail de facturation</h2>
 <%= link_to 'Portail de facturation', @portal_session.url, class: "btn btn-secondary" %>
 <h2>Rechargement</h2>

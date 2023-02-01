@@ -5,3 +5,4 @@ import "trix"
 import "@rails/actiontext"
 import "@fortawesome/fontawesome-free"
 import "./controllers"
+import 'masonry-layout'

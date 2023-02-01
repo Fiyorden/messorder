@@ -18,5 +18,6 @@ class WelcomeController < ApplicationController
       end
     end
     @portal_session = current_user.payment_processor.billing_portal
+    @orders = Order.where(user: current_user)
   end
 end

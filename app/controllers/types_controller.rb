@@ -3,7 +3,7 @@
 # Scaffold de type de plat
 class TypesController < ApplicationController
   before_action :set_type, only: %i[show edit update destroy]
-
+  before_action :is_admin
   # GET /types
   def index
     @types = Type.all
@@ -25,7 +25,7 @@ class TypesController < ApplicationController
     @type = Type.new(type_params)
 
     if @type.save
-      redirect_to @type, notice: 'Type was successfully created.'
+      redirect_to @type, flash: { info: t('create_cont') }
     else
       render :new, status: :unprocessable_entity
     end
@@ -34,7 +34,7 @@ class TypesController < ApplicationController
   # PATCH/PUT /types/1
   def update
     if @type.update(type_params)
-      redirect_to @type, notice: 'Type was successfully updated.'
+      redirect_to @type, flash: { info: t('update_cont') }
     else
       render :edit, status: :unprocessable_entity
     end
@@ -43,7 +43,7 @@ class TypesController < ApplicationController
   # DELETE /types/1
   def destroy
     @type.destroy
-    redirect_to types_url, notice: 'Type was successfully destroyed.'
+    redirect_to types_url, flash: { info: t('destroy_cont') }
   end
 
   private
@@ -56,5 +56,11 @@ class TypesController < ApplicationController
   # Only allow a list of trusted parameters through.
   def type_params
     params.require(:type).permit(:name, :enabled)
+  end
+
+  def is_admin
+    unless current_user.admin?
+      redirect_to root_url, flash: { error: t('acces_denied') }
+    end
   end
 end
