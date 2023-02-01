@@ -17,14 +17,14 @@
     <% foo = nil 
       @openings.each do |opening| %>
         <% if foo == getDate(opening.from_at) %>
-          <td><%= link_to to_time(opening.from_at) + '-' + to_time(opening.to_at), new_order_path(opening: opening.id), class: "text-decoration-none" %></td>
+          <td><%= link_to to_time(opening.from_at) + '-' + to_time(opening.to_at), new_order_path(opening_id: opening.id), class: "text-decoration-none" %></td>
         <% else %>
           <% if foo != nil%>
             </tr><tr>
           <% end %>
           <% foo = getDate(opening.from_at) %>
           <td><%= getDate(opening.from_at) %></td>
-          <td><%= link_to to_time(opening.from_at) + '-' + to_time(opening.to_at), new_order_path(opening: opening.id), class: "text-decoration-none" %></td> 
+          <td><%= link_to to_time(opening.from_at) + '-' + to_time(opening.to_at), new_order_path(opening_id: opening.id), class: "text-decoration-none" %></td> 
         <% end %>
     <% end %>
     </tr>

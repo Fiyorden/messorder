@@ -1,9 +1,3 @@
-<h1>New order</h1>
+<h1><%= t("helpers.titles.new", model: Order.model_name.human.mb_chars) %></h1>
 
 <%= render "form", order: @order %>
-
-<br>
-
-<div>
-  <%= link_to "Back to orders", orders_path %>
-</div>

@@ -1,24 +1,18 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Comment installer : 
 
-Things you may want to cover:
+Prendre un VPS 
 
-* Ruby version
+Se connecter en SSH
 
-* System dependencies
+git clone https://github.com/Fiyorden/messorder.git
 
-* Configuration
+bundle install
 
-* Database creation
+configurer le fichier config/database.yml
 
-* Database initialization
+bundle exec rails db:create
+bundle exec rails db:migrate
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+bundle exec sidekiq

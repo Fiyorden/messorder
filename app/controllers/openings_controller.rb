@@ -17,7 +17,9 @@ class OpeningsController < ApplicationController
   end
 
   # GET /openings/1
-  def show; end
+  def show
+    @orders = Order.where(opening: @opening) 
+  end
 
   # GET /openings/new
   def new
