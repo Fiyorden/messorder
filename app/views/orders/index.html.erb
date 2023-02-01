@@ -1,6 +1,6 @@
-<p style="color: green"><%= notice %></p>
+<h1><%= t("helpers.titles.list", model: Order.model_name.human.pluralize.mb_chars) %></h1>
 
-<h1>Orders</h1>
+<%= link_to icon('fa-solid','plus'), new_order_path, class: 'btn btn-secondary btn-xs' %>
 
 <div id="orders">
   <% @orders.each do |order| %>
@@ -11,4 +11,26 @@
   <% end %>
 </div>
 
-<%= link_to "New order", new_order_path %>
+<div class="table-responsive">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Column 1</th>
+        <th scope="col">Column 2</th>
+        <th scope="col">Column 3</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="">
+        <td scope="row">R1C1</td>
+        <td>R1C2</td>
+        <td>R1C3</td>
+      </tr>
+      <tr class="">
+        <td scope="row">Item</td>
+        <td>Item</td>
+        <td>Item</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

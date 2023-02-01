@@ -18,8 +18,13 @@ fr:
         in: Sens
         user: Utilisateur
         amount: Montant
+      order:
+        opening: Horaire du mess
+        user: Utilisateur
+        dishes: Plats
     models:
       dish: plat
-      opening: Ouverture
-      type: Catégorie
-      wallet: Transaction
+      opening: ouverture
+      type: catégorie
+      wallet: transaction
+      order: commande

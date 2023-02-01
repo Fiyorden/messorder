@@ -15,7 +15,7 @@
     <% dishes.each do |dish| %>
       <li>
         <% if current_user %>
-          <%= link_to dish.name + ' ' +number_to_currency(dish.price) , new_order_path(dish.id) %>
+          <%= link_to dish.name + ' ' +number_to_currency(dish.price) , new_order_path(dish: dish.id), class: "text-decoration-none" %>
         <% else %>
           <%= dish.name %> <%= number_to_currency(dish.price) %>
         <% end %>        

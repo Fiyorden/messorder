@@ -1,6 +1,7 @@
 class WelcomeController < ApplicationController
   def index
     @types = Type.actif
+    @openings = Opening.week.order(:from_at)
   end
 
   def account
