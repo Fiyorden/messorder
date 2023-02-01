@@ -2,8 +2,26 @@
 <h2> Montant restant</h2>
 <%= number_to_currency(@balance) %>
 <h2>Mouvement </h2>
-<%= @wallets %>
+<div class="table-responsive">
+    <table class="table table-primary">
+        <thead>
+            <tr>
+                <th scope="col">Moment</th>
+                <th scope="col">Montant</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @wallets.each do |wallet| %>
+                <tr>
+                    <td scope="row"><%= getDatetime(wallet.created_at) %></td>
+                    <td><%= wallet.in ? "+" : "-" %><%= number_to_currency(wallet.amount) %></td>
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+</div>
+
 <h2>Portail de facturation</h2>
 <%= link_to 'Portail de facturation', @portal_session.url, class: "btn btn-secondary" %>
 <h2>Rechargement</h2>
-<%= link_to '5 €', nil, class: "btn btn-success" %> <%= link_to '10 €', nil, class: "btn btn-success" %> <%= link_to '20 €', nil, class: "btn btn-success" %>
+<%= link_to '5 €', checkout_path(line: 'price_1MWRJqCTGiV0aSTBClPZwPTg'), class: "btn btn-success" %> <%= link_to '10 €', checkout_path(line: 'price_1MWRKTCTGiV0aSTBqG8wf9De'), class: "btn btn-success" %> <%= link_to '20 €', checkout_path(line: 'price_1MWRL6CTGiV0aSTBO29M33YE'), class: "btn btn-success" %>

@@ -14,7 +14,12 @@ fr:
       type:
         name: Nom
         enabled: Actif
+      wallet:
+        in: Sens
+        user: Utilisateur
+        amount: Montant
     models:
       dish: plat
       opening: Ouverture
       type: Catégorie
+      wallet: Transaction

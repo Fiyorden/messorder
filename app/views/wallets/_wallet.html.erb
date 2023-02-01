@@ -1,17 +1,12 @@
 <div id="<%= dom_id wallet %>">
   <p>
-    <strong>In:</strong>
-    <%= wallet.in %>
+    <strong><%= Wallet.human_attribute_name(:user) %>:</strong>
+    <%= wallet.user.name %>
   </p>
 
   <p>
-    <strong>User:</strong>
-    <%= wallet.user_id %>
-  </p>
-
-  <p>
-    <strong>Amount:</strong>
-    <%= wallet.amount %>
+    <strong><%= Wallet.human_attribute_name(:amount) %>:</strong>
+    <%= wallet.in ? "+" : "-" %><%= number_to_currency(wallet.amount) %>
   </p>
 
 </div>

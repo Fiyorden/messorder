@@ -1,6 +1,6 @@
-<p style="color: green"><%= notice %></p>
+<h1><%= t("helpers.titles.list", model: Wallet.model_name.human.pluralize.mb_chars) %></h1>
 
-<h1>Wallets</h1>
+<%= link_to icon('fa-solid','plus'), new_wallet_path, class: 'btn btn-secondary btn-xs' %>
 
 <div id="wallets">
   <% @wallets.each do |wallet| %>
@@ -11,4 +11,3 @@
   <% end %>
 </div>
 
-<%= link_to "New wallet", new_wallet_path %>
