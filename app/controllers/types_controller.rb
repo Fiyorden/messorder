@@ -1,5 +1,8 @@
+# frozen_string_literal: true
+
+# Scaffold de type de plat
 class TypesController < ApplicationController
-  before_action :set_type, only: %i[ show edit update destroy ]
+  before_action :set_type, only: %i[show edit update destroy]
 
   # GET /types
   def index
@@ -7,8 +10,7 @@ class TypesController < ApplicationController
   end
 
   # GET /types/1
-  def show
-  end
+  def show; end
 
   # GET /types/new
   def new
@@ -16,15 +18,14 @@ class TypesController < ApplicationController
   end
 
   # GET /types/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /types
   def create
     @type = Type.new(type_params)
 
     if @type.save
-      redirect_to @type, notice: "Type was successfully created."
+      redirect_to @type, notice: 'Type was successfully created.'
     else
       render :new, status: :unprocessable_entity
     end
@@ -33,7 +34,7 @@ class TypesController < ApplicationController
   # PATCH/PUT /types/1
   def update
     if @type.update(type_params)
-      redirect_to @type, notice: "Type was successfully updated."
+      redirect_to @type, notice: 'Type was successfully updated.'
     else
       render :edit, status: :unprocessable_entity
     end
@@ -42,17 +43,18 @@ class TypesController < ApplicationController
   # DELETE /types/1
   def destroy
     @type.destroy
-    redirect_to types_url, notice: "Type was successfully destroyed."
+    redirect_to types_url, notice: 'Type was successfully destroyed.'
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_type
-      @type = Type.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def type_params
-      params.require(:type).permit(:name, :enabled)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_type
+    @type = Type.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def type_params
+    params.require(:type).permit(:name, :enabled)
+  end
 end

@@ -1,6 +1,8 @@
-require_relative "boot"
+# frozen_string_literal: true
 
-require "rails/all"
+require_relative 'boot'
+
+require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -15,7 +17,7 @@ module Messorder
       generate.helper false
       generate.test_framework :test_unit, fixture: false
     end
-    config.action_mailer.default_url_options = { host: "messorder.test" }
+    config.action_mailer.default_url_options = { host: 'messorder.test' }
 
     config.time_zone = 'Brussels'
     config.i18n.default_locale = :fr

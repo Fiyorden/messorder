@@ -2,35 +2,27 @@
 
 <%= link_to icon('fa-solid','plus'), new_order_path, class: 'btn btn-secondary btn-xs' %>
 
-<div id="orders">
-  <% @orders.each do |order| %>
-    <%= render order %>
-    <p>
-      <%= link_to "Show this order", order %>
-    </p>
-  <% end %>
-</div>
-
 <div class="table-responsive">
   <table class="table table-hover">
     <thead>
       <tr>
-        <th scope="col">Column 1</th>
-        <th scope="col">Column 2</th>
-        <th scope="col">Column 3</th>
+        <th><%= Order.human_attribute_name(:opening) %></th>
+        <th><%= Order.human_attribute_name(:user) %></th>
+        <th><%= Order.human_attribute_name(:paid) %></th>
+        <th><%= Order.human_attribute_name(:dishes) %></th>
+        <th><%=t("helpers.actions") %></th>
       </tr>
     </thead>
-    <tbody>
-      <tr class="">
-        <td scope="row">R1C1</td>
-        <td>R1C2</td>
-        <td>R1C3</td>
-      </tr>
-      <tr class="">
-        <td scope="row">Item</td>
-        <td>Item</td>
-        <td>Item</td>
-      </tr>
+    <tbody id="orders">
+      <% @orders.each do |order| %>
+        <tr>
+          <%= render order %>
+          <td>
+            <%= link_to icon('fa-solid','eye'), order, class: "btn btn-dark" %>
+            <%= link_to icon('fa-solid', 'pencil'), edit_order_path(order), class: "btn btn-info" %>
+          </td>
+        </tr>
+      <% end %>
     </tbody>
   </table>
 </div>

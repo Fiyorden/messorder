@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Controller d'acceuil et de compte
 class WelcomeController < ApplicationController
   def index
     @types = Type.actif
@@ -8,12 +11,12 @@ class WelcomeController < ApplicationController
     @balance = 0
     @wallets = Wallet.where(user: current_user)
     @wallets.each do |wallet|
-      if wallet.in 
+      if wallet.in
         @balance += wallet.amount
       else
         @balance -= wallet.amount
       end
     end
-    @portal_session = current_user.payment_processor.billing_portal 
+    @portal_session = current_user.payment_processor.billing_portal
   end
 end

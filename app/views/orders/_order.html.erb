@@ -1,17 +1,18 @@
 <div id="<%= dom_id order %>">
-  <p>
-    <strong>Opening:</strong>
-    <%= order.opening_id %>
-  </p>
+  <td>
+    <%= order.opening.name %>
+  </td>
 
-  <p>
-    <strong>User:</strong>
-    <%= order.user_id %>
-  </p>
+  <td>
+    <%= order.user.name %>
+  </td>
 
-  <p>
-    <strong>Paid:</strong>
-    <%= order.paid %>
-  </p>
-
+  <td>
+    <%= logo_boolean(order.paid) %>
+  </td>
+  <td>
+    <% order.dishes.each do |dish| %>
+      <%= dish.name %> <br>
+    <% end %>
+  </td>
 </div>

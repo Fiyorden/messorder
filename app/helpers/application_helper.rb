@@ -1,25 +1,27 @@
+# frozen_string_literal: true
+
 module ApplicationHelper
   def active_class(link_path)
-    current_page?(link_path) ? "active" : ""
+    current_page?(link_path) ? 'active' : ''
   end
 
   def flash_class(level)
     case level
-      when 'notice' then "alert alert-info"
-      when 'success' then "alert alert-success"
-      when 'error' then "alert alert-danger"
-      when 'alert' then "alert alert-warning"
+    when 'notice' then 'alert alert-info'
+    when 'success' then 'alert alert-success'
+    when 'error' then 'alert alert-danger'
+    when 'alert' then 'alert alert-warning'
     end
   end
 
   def logo_boolean(boolean)
     if boolean
       tag.span class: 'badge rounded-pill bg-success' do
-        icon('fa-solid','check')
+        icon('fa-solid', 'check')
       end
     else
       tag.span class: 'badge rounded-pill bg-danger' do
-        icon('fa-solid','times')
+        icon('fa-solid', 'times')
       end
     end
   end
@@ -28,7 +30,7 @@ module ApplicationHelper
     if value.present?
       yield
     else
-      content_tag :span, "Aucune donnée", class: "text-muted"
+      content_tag :span, 'Aucune donnée', class: 'text-muted'
     end
   end
 
@@ -50,9 +52,9 @@ module ApplicationHelper
     end
   end
 
-  def fa_icon(names = "flag", original_options = {})
+  def fa_icon(names = 'flag', original_options = {})
     options = original_options.deep_dup
-    classes = ["fa"]
+    classes = ['fa']
     classes.concat Private.icon_names(names)
     classes.concat Array(options.delete(:class))
     text = options.delete(:text)
@@ -61,11 +63,11 @@ module ApplicationHelper
     Private.icon_join(icon, text, right_icon)
   end
 
-  def fa_stacked_icon(names = "flag", original_options = {})
+  def fa_stacked_icon(names = 'flag', original_options = {})
     options = original_options.deep_dup
-    classes = Private.icon_names("stack").concat(Array(options.delete(:class)))
-    base_names = Private.array_value(options.delete(:base) || "square-o").push("stack-2x")
-    names = Private.array_value(names).push("stack-1x")
+    classes = Private.icon_names('stack').concat(Array(options.delete(:class)))
+    base_names = Private.array_value(options.delete(:base) || 'square-o').push('stack-2x')
+    names = Private.array_value(names).push('stack-1x')
     base = fa_icon(base_names, options.delete(:base_options) || {})
     icon = fa_icon(names, options.delete(:icon_options) || {})
     icons = [base, icon]
@@ -84,7 +86,7 @@ module ApplicationHelper
 
       elements = [icon, ERB::Util.html_escape(text)]
       elements.reverse! if reverse_order
-      safe_join(elements, " ")
+      safe_join(elements, ' ')
     end
 
     def self.icon_names(names = [])

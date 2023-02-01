@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   resources :orders
   resources :dishes
@@ -14,6 +16,5 @@ Rails.application.routes.draw do
   get 'checkout', to: 'checkouts#show'
   get 'account', to: 'welcome#account'
   # Defines the root path route ("/")
-  root "welcome#index"
-
+  root 'welcome#index'
 end

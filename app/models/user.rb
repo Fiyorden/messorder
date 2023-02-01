@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -6,6 +8,6 @@ class User < ApplicationRecord
   devise :saml_authenticatable, :trackable
   pay_customer
   def name
-    "#{self.first_name} #{self.last_name}"
+    "#{first_name} #{last_name}"
   end
 end
